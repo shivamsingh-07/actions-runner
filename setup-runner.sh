@@ -4,9 +4,9 @@ set -e
 
 RUNNER_DIR="/home/vagrant/actions-runner"
 
-echo "=================================================="
-echo "  GitHub Self-Hosted Runner - Interactive Setup"
-echo "=================================================="
+echo "========================================"
+echo "   GitHub Self-Hosted Runner - Setup"
+echo "========================================"
 echo ""
 
 echo "Step 1: Starting Vagrant box and provisioning (packages + runner configuration)..."

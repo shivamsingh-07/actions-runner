@@ -92,7 +92,3 @@ Inside the VM you can use:
 
 - **Token expiry** — Registration tokens from GitHub expire quickly (~1 hour). If config fails, generate a new token and run the config step again.
 - **Re-provisioning** — `vagrant provision` re-runs `provision.sh`; the script skips re-downloading the runner if it’s already present.
-
----
-
-Enjoy your self-hosted runner. 🎉

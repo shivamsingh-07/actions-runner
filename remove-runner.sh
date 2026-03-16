@@ -4,9 +4,9 @@ set -e
 
 RUNNER_DIR="/home/vagrant/actions-runner"
 
-echo "=================================================="
-echo "  GitHub Self-Hosted Runner - Decommission"
-echo "=================================================="
+echo "==============================================="
+echo "   GitHub Self-Hosted Runner - Decommission"
+echo "==============================================="
 echo ""
 echo "  In GitHub: Repo or Org ⇒ Settings ⇒ Actions ⇒ Runners"
 echo "  Select the runner ⇒ Remove ⇒ copy the removal token."

@@ -4,25 +4,24 @@ set -e
 
 RUNNER_DIR="${RUNNER_DIR:-/home/vagrant/actions-runner}"
 
-echo "==> Updating packages..."
+# Updating packages
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
 apt-get upgrade -y -qq
 
-echo "==> Installing dependencies (curl, jq, Python, build-essential)..."
+# Installing dependencies (curl, jq, Python, build-essential)
 apt-get install -y -qq curl jq build-essential python3 python3-venv
 
-echo "==> Installing Docker..."
+# Installing Docker
 curl -fsSL https://get.docker.com | sh
 usermod -aG docker vagrant
 
 # Skip if runner already extracted (idempotent)
 if [ -f "$RUNNER_DIR/config.sh" ]; then
-	echo "==> Runner already installed at $RUNNER_DIR, skipping download."
 	exit 0
 fi
 
-echo "==> Downloading latest GitHub Actions runner..."
+# Downloading latest GitHub Actions runner
 mkdir -p "$RUNNER_DIR"
 cd "$RUNNER_DIR"
 
@@ -40,4 +39,3 @@ tar xzf "$runner_file"
 rm -f "$runner_file"
 
 chown -R vagrant:vagrant "$RUNNER_DIR"
-echo "==> Runner installed at $RUNNER_DIR."
